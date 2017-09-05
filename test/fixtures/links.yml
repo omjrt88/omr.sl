@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  in_url: MyString
+  token: MyString
+  clicks: 1
+  title: MyString
+
+two:
+  in_url: MyString
+  token: MyString
+  clicks: 1
+  title: MyString

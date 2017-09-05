@@ -1,0 +1,172 @@
+@import "bootstrap";
+
+body {
+  background-color: black;
+  padding-bottom: 100px;
+}
+
+span.clicks {
+  font-size: 50px;
+}
+
+span.time {
+  font-style: italic;
+}
+
+img.screenshot {
+  width: 100%;
+}
+
+form div {
+  display: inline-block;
+}
+
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form div.field {
+  margin-top: 12px;
+  margin-left: 10px;
+}
+
+form div.actions {
+  margin-top: 12px;
+  margin-left: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+div.title {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+div.result {
+  height: 60px;
+  margin-top: 10px;
+}
+
+@keyframes myfirst {
+  from {
+    background: yellow;
+  }
+
+  to {
+    background: none;
+  }
+}
+
+@-webkit-keyframes myfirst {
+  from {
+    background: yellow;
+  }
+
+  to {
+    background: none;
+  }
+}
+
+div.result p {
+  margin: 0;
+  padding: 0;
+  line-height: 60px;
+  animation: myfirst 2s;
+  -webkit-animation: myfirst 2s;
+}
+
+div.link {
+  margin-bottom: 60px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+p.bottom_nav {
+  text-align: center;
+}
+
+p.short_url {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+p.title {
+  text-align: center;
+  height: 36px;
+}
+
+p.long_url {
+  text-align: center;
+  color: #DCDCDC;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 36px;
+  font-size: 13px !important;
+  margin-top: 15px;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+  height: 400px;
+}
+
+ul.click_time li:last-child {
+  margin-top: 0px;
+  float: left;
+}
+
+ul.click_time {
+  height: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+li {
+  margin-top: 20px;
+}
+
+div.screenshot-outer {
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #DCDCDC;
+}
+
+div.screenshot-outer-individual {
+  height: 340px;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #DCDCDC;
+}
+
+div.screenshot-outer img {
+  padding: 10px;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-footer {
+  text-align: right;
+  font-size: 10px !important;
+}
+.badge {
+  color: #1260FF;
+}
+
+.result {
+  color: #7b8a99;
+}
+
+.blank {
+  background: #ffffff;
+}

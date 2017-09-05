@@ -1,0 +1,16 @@
+<div class="col-lg-12   col-md-12 col-sm-6 col-xs-12">
+  <p id="notice"><%= notice %></p>
+
+  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 link card">
+    <div class="card-block">
+      <div class="card-header short_url card-link"><%= link_to @link.display_token, @link.token, target: '_blank' %></div>
+      <p class="long_url card-link"><%= link_to truncate(@link.in_url, length: 60), @link.in_url %></p>
+      <ul class="click_time">
+        <li><span class="badge"><span class="clicks"><%= @link.accesses %></span></span> accesses</li>
+      </ul>
+      <div class="card-footer"><span class="time">Accessed at <%= time_ago_in_words(@link.updated_at) %> ago</span></div>
+    </div>
+  </div>
+
+  <%= link_to 'Back', root_path, class:"btn btn-primary"%>
+</div>
