@@ -15,7 +15,7 @@ gem "figaro"
 
 gem 'mechanize'
 
-# gem 'sidekiq'
+gem 'faker'
 
 gem 'bootstrap', '~> 4.0.0.beta'
 
