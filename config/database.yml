@@ -51,4 +51,5 @@ production:
   <<: *default
   database: omr_sl_production
   username: omr_sl
-  password: <%= ENV['OMR_SL_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+#  password: <%= ENV['OMR_SL_DATABASE_PASSWORD'] %>

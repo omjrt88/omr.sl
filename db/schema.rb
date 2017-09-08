@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170905061032) do
   create_table "links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "in_url"
     t.string   "token"
-    t.integer  "accesses",     default: 0
+    t.integer  "accesses",   default: 0
     t.string   "title"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false

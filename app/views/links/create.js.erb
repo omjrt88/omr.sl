@@ -1,3 +1,3 @@
-$('.result').html('<p class="short_url">Your Shortened Link: <%= link_to @link.display_token, @link.display_token, target: "_blank" %></p>')
+$('.result').html('<p class="short_url">Your Shortened Link: <%= link_to @link.display_token, @link.token, target: "_blank" %></p>')
 
 $('#longUrl .form-control.valid').val('');
