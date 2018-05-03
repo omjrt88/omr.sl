@@ -16,6 +16,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-.idea/workspace.xml
+/.idea/workspace.xml
 db/schema.rb
 .idea/*

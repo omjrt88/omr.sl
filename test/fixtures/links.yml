@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  in_url: MyString
-  token: MyString
-  clicks: 1
-  title: MyString
+  in_url: 'https://www.baccredomatic.com/es-cr'
+  token: 1
+  clicks: 3
+  title: BacCredomatic
 
 two:
-  in_url: MyString
-  token: MyString
-  clicks: 1
-  title: MyString
+  in_url: 'https://www.google.com/'
+  token: 2
+  clicks: 8
+  title: Google
