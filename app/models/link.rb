@@ -1,4 +1,5 @@
 class Link < ApplicationRecord
+  validates_presence_of :in_url, :accesses
   after_create :generate_token #, :scrape
 
   def generate_token
