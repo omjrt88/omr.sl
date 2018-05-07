@@ -1,4 +1,4 @@
-# README*``*
+# README**
 
 To Run this app on local, please run these steps:
 
@@ -37,3 +37,20 @@ To deploy this project on Heroku, please run the following steps, after you clon
 
 Finally, run and see the app:
 * _heroku open_
+
+
+## TEST - Rubycritic
+
+You can check the code Quality:
+
+<img width="1440" alt="screen shot 2018-05-07 at 2 34 55 pm" src="https://user-images.githubusercontent.com/6087761/39724008-bf37073a-5204-11e8-81ab-53cf8a63fcb5.png">
+
+To generate the page, please on local run "rubycritic" on your terminal, on project root.
+
+## TEST - Rspecs
+
+The project has configurations to run rspec tests to check functionalities:
+
+<img width="636" alt="screen shot 2018-05-07 at 2 46 13 pm" src="https://user-images.githubusercontent.com/6087761/39724278-90167886-5205-11e8-9c46-ef3e1111e9f6.png">
+
+To check this, please run: "bundle exec rspec".
