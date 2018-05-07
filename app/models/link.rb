@@ -6,22 +6,28 @@ class Link < ApplicationRecord
   INITIAL_POSITION = 8
   @lastPosition = 12
 
-  def self.lastPosition
-    @lastPosition
-  end
-
   def generate_token
-    self.token = Digest::SHA2.hexdigest(self.id.to_s)[INITIAL_POSITION..self.class.lastPosition]
+    lastPos = self.class.lastPosition
+    self.token = Digest::SHA2.hexdigest(self.id.to_s)[INITIAL_POSITION..lastPos]
     self.save
   rescue ActiveRecord::RecordNotUnique => e
-    @token_attempts = @token_attempts.to_i + 1
-    retry if @token_attempts < MAX_RETRIES
-    self.class.lastPosition += 1
+    @token_attempts += 1
+    retry if max_entries?
+    @lastPosition += 1
     @token_attempts = 0
     retry
   end
 
   def display_token
     ENV['BASE_URL'] + self.token
+  end
+
+  private
+  def self.lastPosition
+    @lastPosition
+  end
+
+  def max_entries?
+    @token_attempts < MAX_RETRIES
   end
 end
