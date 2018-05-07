@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Main Links Controller Integration Test
 class LinksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @link = links(:one)
@@ -17,7 +18,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create link" do
     assert_difference('Link.count') do
-      post links_url, params: { link: {accesses: @link.accesses, in_url: @link.in_url, title: @link.title, token: @link.token } }
+      post links_url, params: set_params
     end
 
     assert_redirected_to link_url(Link.last)
@@ -34,7 +35,7 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update link" do
-    patch link_url(@link), params: { link: {accesses: @link.accesses, in_url: @link.in_url, title: @link.title, token: @link.token } }
+    patch link_url(@link), params: set_params
     assert_redirected_to link_url(@link)
   end
 
@@ -44,5 +45,10 @@ class LinksControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to links_url
+  end
+
+  private
+  def set_params
+    { link: {accesses: @link.accesses, in_url: @link.in_url, title: @link.title, token: @link.token } }
   end
 end

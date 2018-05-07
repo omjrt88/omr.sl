@@ -1,3 +1,4 @@
+# Main Links Controller
 class LinksController < ApplicationController
   before_action :set_link, only: [:show]
 

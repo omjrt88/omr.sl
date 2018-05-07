@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# Main Links Controller Rspec
 RSpec.describe LinksController, type: :controller do
   Link.delete_all
   Rails.application.load_seed
@@ -28,7 +29,7 @@ RSpec.describe LinksController, type: :controller do
     it 'Adding new url' do
       headers = {
         "ACCEPT" => "application/json",     # This is what Rails 4 accepts
-        "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+        "HTTP_ACCEPT" => "application/json" # This is what Rails 3 acceptsrubycritic
       }
       post  "create", :params => {:link => {:in_url => "www.youtube.com"}}, :headers => headers
       expect(response).to redirect_to(assigns(:link))

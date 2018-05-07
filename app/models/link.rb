@@ -4,16 +4,19 @@ class Link < ApplicationRecord
 
   MAX_RETRIES = 3
   INITIAL_POSITION = 8
-  @@lastPosition = 12
+  @lastPosition = 12
+
+  def self.lastPosition
+    @lastPosition
+  end
 
   def generate_token
-    self.token = Digest::SHA2.hexdigest(self.id.to_s)[INITIAL_POSITION..@@lastPosition]
+    self.token = Digest::SHA2.hexdigest(self.id.to_s)[INITIAL_POSITION..self.class.lastPosition]
     self.save
   rescue ActiveRecord::RecordNotUnique => e
     @token_attempts = @token_attempts.to_i + 1
     retry if @token_attempts < MAX_RETRIES
-
-    @@lastPosition += 1
+    self.class.lastPosition += 1
     @token_attempts = 0
     retry
   end
