@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 
 RSpec.describe LinksController, type: :controller do
   Link.delete_all

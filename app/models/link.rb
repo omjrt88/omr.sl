@@ -2,9 +2,20 @@ class Link < ApplicationRecord
   validates_presence_of :in_url, :accesses
   after_create :generate_token #, :scrape
 
+  MAX_RETRIES = 3
+  INITIAL_POSITION = 8
+  @@lastPosition = 12
+
   def generate_token
-    self.token = self.id.to_s(36)
+    self.token = Digest::SHA2.hexdigest(self.id.to_s)[INITIAL_POSITION..@@lastPosition]
     self.save
+  rescue ActiveRecord::RecordNotUnique => e
+    @token_attempts = @token_attempts.to_i + 1
+    retry if @token_attempts < MAX_RETRIES
+
+    @@lastPosition += 1
+    @token_attempts = 0
+    retry
   end
 
   def display_token
